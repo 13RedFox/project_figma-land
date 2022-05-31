@@ -1,0 +1,110 @@
+@import "../../scss/variables";
+
+.header {
+  max-width: 1210px;
+  width: 100%;
+  padding: 31px 0;
+  margin: 0 auto;
+  @media (min-width: 1200px) {
+    padding: 49px 0;
+  }
+
+  background: gray;
+
+  .wrapper {
+    display: flex;
+  }
+
+  &__list {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 35px;
+    @media (min-width: 860px) {
+      display: flex;
+    }
+
+    &_item {
+      margin-right: 21px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    &_link {
+      display: block;
+      font-size: $N15;
+      font-weight: 400;
+      line-height: 187%;
+      letter-spacing: 0.2px;
+      color: $WHITE;
+      text-transform: capitalize;
+      padding: 0 10px;
+      transition: color .3s ease-in-out;
+
+      &:hover {
+        color: $BLUE;
+      }
+    }
+  }
+
+  &__logo {
+    svg {
+      width: 186px;
+      height: 58px;
+    }
+  }
+
+  &__social {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    @media (min-width: 860px) {
+      display: flex;
+    }
+
+    &_item {
+      margin-right: 24px;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+
+    &_link {
+      display: flex;
+
+
+      &:hover > svg {
+        fill: $BLUE;
+      }
+    }
+
+    &_icon {
+      $size: 41px;
+      width: $size;
+      height: $size;
+      fill: $WHITE;
+      transition: fill .3s ease-in-out;
+
+    }
+  }
+
+  &__menu {
+    display: flex;
+    width: 40px;
+    height: 32px;
+    fill: $WHITE;
+    transition: fill .3s ease-in-out;
+    @media (min-width: 860px) {
+      display: none;
+    }
+
+    &:hover {
+      fill: $BLUE;
+    }
+
+
+  }
+}
