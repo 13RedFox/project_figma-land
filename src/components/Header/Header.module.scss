@@ -1,15 +1,18 @@
 @import "../../scss/variables";
 
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   max-width: 1210px;
   width: 100%;
   padding: 31px 0;
   margin: 0 auto;
+  z-index: 1;
   @media (min-width: 1200px) {
     padding: 49px 0;
   }
-
-  background: gray;
 
   .wrapper {
     display: flex;

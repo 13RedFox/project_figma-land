@@ -36,7 +36,7 @@ export const Header = () => {
         <ul className={styles.header__social}>
           {[] && social.map((item) => (
             <li key={item.id} className={styles.header__social_item}>
-              <a href='#' className={styles.header__social_link}>
+              <a href='/#' className={styles.header__social_link}>
                 <GlobalSvgIcons id={item.icon} className={styles.header__social_icon} />
               </a>
             </li>
