@@ -1,5 +1,5 @@
 import './scss/app.scss';
-import { HomeHeader } from './components/home';
+import { HomeFeature, HomeHeader } from './components/home';
 import { TheNavigation } from './components/TheNavigation';
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
       <TheNavigation />
       <main>
         <HomeHeader />
+        <HomeFeature />
       </main>
     </div>
   );
