@@ -1,6 +1,6 @@
-@import "./src/scss/variables";
+@import "../../../scss/variables";
 
-.firstScreen {
+.header {
   position: relative;
   height: 100vh;
   background-color: $DARK;
@@ -15,10 +15,10 @@
     left: 0;
     width: 100%;
     height: calc(100vh - 32px);
-    background: url("../../assets/images/first_bg-mobile.png") bottom / cover;
+    background: url("../../../assets/images/first_bg-mobile.png") bottom / cover;
     @media (min-width: 768px) {
       height: calc(100% - 64px);
-      background: url("../../assets/images/first_bg.png") center / cover no-repeat;
+      background: url("../../../assets/images/first_bg.png") center / cover no-repeat;
     }
     @media (min-width: 1024px) {
       height: calc(100% - 110px);

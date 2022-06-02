@@ -1,6 +1,6 @@
 @import "../../scss/variables";
 
-.header {
+.navigation {
   position: absolute;
   top: 0;
   left: 0;
@@ -78,7 +78,6 @@
     &_link {
       display: flex;
 
-
       &:hover > svg {
         fill: $BLUE;
       }
@@ -90,7 +89,6 @@
       height: $size;
       fill: $WHITE;
       transition: fill .3s ease-in-out;
-
     }
   }
 
@@ -107,7 +105,5 @@
     &:hover {
       fill: $BLUE;
     }
-
-
   }
 }
