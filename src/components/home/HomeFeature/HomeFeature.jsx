@@ -1,6 +1,8 @@
+import video from '../../../assets/images/feature.png';
 import { Container } from '../../common';
-import styles from './HomeFeature.module.scss';
 import { HomeFeatureCard } from './HomeFeatureCard';
+import styles from './HomeFeature.module.scss';
+import { GlobalSvgIcons } from '../../../assets/icons/GlobalSvgIcons';
 
 export const HomeFeature = () => {
   const card = [
@@ -35,6 +37,12 @@ export const HomeFeature = () => {
           {[] && card.map((item) => (
             <HomeFeatureCard key={item.id} card={item} />
           ))}
+        </div>
+        <div className={styles.feature__video}>
+          <img src={video} alt='Images' />
+          <div className={styles.feature__video_btn}>
+            <GlobalSvgIcons id='play' className={styles.feature__video_icon} />
+          </div>
         </div>
       </Container>
     </div>

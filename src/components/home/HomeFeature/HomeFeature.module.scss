@@ -48,8 +48,11 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    @media (min-width: 768px) {
+    order: 1;
+    @media (min-width: 737px) {
       justify-content: space-between;
+      order: 0;
+      margin-bottom: 65px;
     }
     @media (min-width: 1024px) {
       margin-bottom: 130px;
@@ -69,9 +72,6 @@
       margin-bottom: 0;
     }
 
-    @media (min-width: 768px) {
-      margin-bottom: 40px;
-    }
     @media (min-width: 737px) {
       margin-bottom: 0;
     }
@@ -88,6 +88,7 @@
     }
 
     &__title {
+      min-height: 55px;
       font-size: 20px;
       font-weight: 700;
       line-height: 140%;
@@ -95,9 +96,6 @@
       text-align: center;
       color: $WHITE;
       margin-bottom: 20px;
-      @media (min-width: 575px) {
-        min-height: 55px;
-      }
     }
 
     &__description {
@@ -108,5 +106,82 @@
       text-align: center;
       color: $WHITE;
     }
+  }
+
+  &__video {
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+    background-color: $BLUE;
+    width: 100%;
+    max-width: 1170px;
+    box-shadow: $BOX_SHADOW;
+    border-radius: 15px;
+    order: 0;
+    overflow: hidden;
+    margin-bottom: 55px;
+    @media (min-width: 575px) {
+      border-radius: 30px;
+    }
+    @media (min-width: 737px) {
+      border-radius: 45px;
+      order: 1;
+      margin-bottom: 0;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: cover;
+    }
+
+    &_btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      $size: 61px;
+      width: $size;
+      height: $size;
+      background-color: $WHITE;
+      border-radius: 50%;
+      cursor: pointer;
+      @media (min-width: 737px) {
+        $size: 125px;
+        width: $size;
+        height: $size;
+        background-color: $BLUE;
+      }
+      @media (min-width: 1024px) {
+        $size: 187px;
+        width: $size;
+        height: $size;
+      }
+    }
+
+    &_icon {
+      width: 15px;
+      height: 15px;
+      fill: $BLUE;
+      @media (min-width: 737px) {
+        width: 30px;
+        height: 30px;
+        fill: $WHITE;
+      }
+      @media (min-width: 1024px) {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
   }
 }
