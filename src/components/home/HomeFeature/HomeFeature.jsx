@@ -1,8 +1,33 @@
 import video from '../../../assets/images/feature.png';
+import { motion } from 'framer-motion';
 import { Container } from '../../common';
-import { HomeFeatureCard } from './HomeFeatureCard';
-import styles from './HomeFeature.module.scss';
 import { GlobalSvgIcons } from '../../../assets/icons/GlobalSvgIcons';
+import styles from './HomeFeature.module.scss';
+import { MHomeFeatureCard } from './HomeFeatureCard';
+
+const sectionAnimation = {
+  hidden: {
+    y: -100,
+    opacity: 0
+  },
+  visible: custom => ({
+    y: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.2 }
+  })
+};
+
+const cardAnimation = {
+  hidden: {
+    y: -100,
+    opacity: 0
+  },
+  visible: custom => ({
+    y: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.3 }
+  })
+};
 
 export const HomeFeature = () => {
   const card = [
@@ -27,17 +52,30 @@ export const HomeFeature = () => {
   ];
 
   return (
-    <div className={styles.feature}>
+    <motion.section
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ amount: 0.2 }}
+      className={styles.feature}>
       <Container className={styles.container}>
-        <h2 className={styles.feature__title}>features</h2>
-        <p className={styles.feature__description}>
+        <motion.h2 custom={1} variants={sectionAnimation} className={styles.feature__title}>features</motion.h2>
+        <motion.p custom={2} variants={sectionAnimation} className={styles.feature__description}>
           Most calendars are designed for teams. Slate is designed for freelancers
-        </p>
-        <div className={styles.feature__wrapper}>
-          {[] && card.map((item) => (
-            <HomeFeatureCard key={item.id} card={item} />
+        </motion.p>
+        <motion.div
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ amount: 0.2 }}
+          className={styles.feature__wrapper}>
+          {[] && card.map((item, idx) => (
+            <MHomeFeatureCard
+              custom={idx + 1}
+              variants={cardAnimation}
+              key={item.id}
+              card={item}
+            />
           ))}
-        </div>
+        </motion.div>
         <div className={styles.feature__video}>
           <img src={video} alt='Images' />
           <div className={styles.feature__video_btn}>
@@ -45,6 +83,6 @@ export const HomeFeature = () => {
           </div>
         </div>
       </Container>
-    </div>
+    </motion.section>
   );
 };
