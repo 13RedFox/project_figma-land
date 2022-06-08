@@ -69,19 +69,24 @@ export const HomeFeature = () => {
           className={styles.feature__wrapper}>
           {[] && card.map((item, idx) => (
             <MHomeFeatureCard
-              custom={idx + 1}
+              custom={idx + 2}
               variants={cardAnimation}
               key={item.id}
               card={item}
             />
           ))}
         </motion.div>
-        <div className={styles.feature__video}>
+        <motion.div
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ amount: 0.2 }}
+          custom={2} variants={cardAnimation}
+          className={styles.feature__video}>
           <img src={video} alt='Images' />
           <div className={styles.feature__video_btn}>
             <GlobalSvgIcons id='play' className={styles.feature__video_icon} />
           </div>
-        </div>
+        </motion.div>
       </Container>
     </motion.section>
   );

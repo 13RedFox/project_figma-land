@@ -1,0 +1,142 @@
+@import '../../../scss/variables';
+
+.subscribe {
+  padding-top: 69px;
+
+
+  .container {
+    flex-direction: column;
+    @media (min-width: 1024px) {
+      flex-direction: row;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    max-width: 677px;
+    height: 0;
+    padding-bottom: 44%;
+    background-color: $DARK;
+    overflow: hidden;
+    margin-bottom: 70px;
+    @media (min-width: 1024px) {
+      margin-bottom: 0;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: contain;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    @media (min-width: 1024px) {
+      max-width: 477px;
+    }
+
+    &_subtitle {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 140%;
+      letter-spacing: 0.1px;
+      color: $WHITE;
+      margin-bottom: 17px;
+    }
+
+    &_title {
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 115%;
+      letter-spacing: 0.2px;
+      text-align: center;
+      color: $WHITE;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+
+    &_title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 140%;
+      letter-spacing: 0.1px;
+      color: $WHITE;
+      margin-bottom: 10px;
+    }
+
+    &_description {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 139%;
+      letter-spacing: 0.2px;
+      color: $WHITE;
+      margin-bottom: 35px;
+    }
+
+    &_wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      @media (min-width: 1024px) {
+        flex-direction: row;
+      }
+    }
+
+    &_email {
+      width: 100%;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 114%;
+      letter-spacing: 0.1px;
+      color: $BLACK;
+      background-color: #f4f4f4;
+      border: 1px solid #e8e8e8;
+      border-radius: 39px;
+      padding: 20px 40px;
+      margin-bottom: 12px;
+      @media (min-width: 1024px) {
+        margin-right: 12px;
+        margin-bottom: 0;
+      }
+    }
+
+    &_btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 100%;
+      letter-spacing: 0.2px;
+      color: $WHITE;
+      background-color: $BLUE;
+      border: none;
+      border-radius: 35px;
+      padding: 19px 38px;
+      cursor: pointer;
+      transition: color .3s ease-in-out;
+
+      &:hover {
+        color: $ORANGE;
+      }
+    }
+  }
+}
